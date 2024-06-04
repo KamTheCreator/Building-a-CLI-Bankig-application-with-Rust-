@@ -121,6 +121,13 @@ fn get_check_digit(payload: &[u8]) -> u8 {
             let sum = {
                 let mut x = 0;
                 for digit in digits {
+                    let y: u8 = digit;
+                    x += y;
+                }
+                x
+            };
+
+            luhn_sum += sum;
         } else {
             luhn_sum += item;
         };
